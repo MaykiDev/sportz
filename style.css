@@ -833,6 +833,139 @@ header {
 }
 
 /* ==========================================================================
+   FOOTER (ENTRE EM CONTATO)
+   ========================================================================== */
+.footer {
+    padding: 100px 0 30px;
+    background-color: var(--primary-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.footer-title {
+    color: var(--accent-yellow); /* #fbaf19 */
+    font-size: 38px;
+    font-weight: 900;
+    margin-bottom: 25px;
+}
+
+.footer-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white-text);
+    margin-bottom: 40px;
+    max-width: 450px;
+}
+
+/* Itens de Contato */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: var(--white-text);
+    font-weight: 900;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.contact-item:hover {
+    color: var(--accent-yellow);
+}
+
+.contact-item i {
+    font-size: 32px;
+}
+
+/* Formulário */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    background: transparent;
+    border: 1px solid var(--white-text);
+    border-radius: 10px;
+    color: var(--white-text);
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.contact-form input::placeholder, 
+.contact-form textarea::placeholder {
+    color: rgba(231, 232, 233, 0.5);
+}
+
+.contact-form button {
+    cursor: pointer;
+    align-self: flex-start;
+    border: none;
+    padding: 15px 40px;
+}
+
+/* Políticas e Copyright */
+.footer-bottom {
+    margin-top: 80px;
+    padding-top: 30px;
+}
+
+.footer-bottom-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: var(--grey-text);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--accent-yellow);
+}
+
+.separator {
+    color: var(--grey-text);
+    font-size: 11px;
+}
+
+.copyright {
+    color: var(--grey-text);
+    font-size: 11px;
+    text-align: center;
+}
+
+/* ==========================================================================
    RESPONSIVIDADE (MEDIA QUERIES)
    ========================================================================== */
 @media (max-width: 1100px) {
@@ -992,6 +1125,25 @@ header {
 
     .img-placeholder {
         height: 250px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .footer-text {
+        margin: 0 auto 40px;
+    }
+
+    .contact-info {
+        align-items: center;
+    }
+
+    .contact-form button {
+        align-self: center;
+        width: 100%;
     }
 }
 
