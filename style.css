@@ -1,0 +1,854 @@
+/* ==========================================================================
+   VARIÁVEIS E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+:root {
+    --primary-bg: #00263a;     /* Azul Escuro (Fundo e Títulos) */
+    --accent-yellow: #fbaf19;  /* Amarelo Principal */
+    --btn-grad-start: #dea939; /* Amarelo Gradiente */
+    --white-text: #e7e8e9;     /* Branco */
+    --grey-text: #d1d2d4;      /* Cinza */
+    --font-main: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--primary-bg);
+    color: var(--white-text);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   HEADER & NAVBAR
+   ========================================================================== */
+header {
+    width: 100%;
+    padding: 30px 5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo-img {
+    height: 40px; /* Ajuste conforme o tamanho da sua logo PNG */
+    width: auto;
+}
+
+/* Menu de Navegação */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: var(--white-text);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: var(--accent-yellow);
+}
+
+.social-icons-mobile {
+    display: none;
+}
+
+/* Ícones de Redes Sociais */
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-btn {
+    background: linear-gradient(180deg, var(--accent-yellow) 0%, var(--btn-grad-start) 100%);
+    color: var(--primary-bg);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(251, 175, 25, 0.4);
+}
+
+/* ==========================================================================
+   HERO SECTION (CONTEÚDO PRINCIPAL)
+   ========================================================================== */
+.hero {
+    height: 100vh;
+    width: 100%;
+    /* Substitua 'seu-fundo.jpg' pelo nome do seu arquivo de imagem */
+    background: linear-gradient(to right, rgba(0, 38, 58, 0.8) 20%, rgba(0, 38, 58, 0.2) 100%), url('seu-fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    max-width: 650px;
+    animation: fadeInLeft 1s ease-out;
+}
+
+.hero-logo {
+    max-width: 450px;
+    margin-bottom: 30px;
+}
+
+.hero-text {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--white-text);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+}
+
+/* ==========================================================================
+   BOTÕES COM ANIMAÇÃO
+   ========================================================================== */
+.hero-btns {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 15px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1;
+}
+
+/* Botão Amarelo (Entre em Contato) */
+.btn-primary {
+    background-color: var(--accent-yellow);
+    color: var(--primary-bg);
+    border: 2px solid var(--accent-yellow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(251, 175, 25, 0.4);
+}
+
+/* Efeito de Brilho no Hover */
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 50%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(30deg);
+    transition: all 0.6s ease;
+}
+
+.btn-primary:hover::after {
+    left: 150%;
+}
+
+/* Botão Outline (Torneios) */
+.btn-outline {
+    border: 2px solid var(--white-text);
+    color: var(--white-text);
+    background: transparent;
+}
+
+.btn-outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--white-text);
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.btn-outline:hover {
+    color: var(--primary-bg);
+}
+
+.btn-outline:hover::before {
+    width: 100%;
+}
+
+/* ==========================================================================
+   MENU HAMBURGUER (MOBILE)
+   ========================================================================== */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1001;
+}
+
+.bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 6px 0;
+    background-color: var(--white-text);
+    transition: 0.4s ease;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   SEÇÃO SOBRE (QUEM SOMOS)
+   ========================================================================== */
+.about {
+    padding: 100px 0;
+    background-color: var(--primary-bg);
+}
+
+.about-grid {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-content {
+    flex: 1.2;
+}
+
+.about-cards {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Títulos e Textos */
+.section-title {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    color: var(--white-text);
+}
+
+.section-desc {
+    font-size: 18px;
+    color: var(--grey-text);
+    margin-bottom: 50px;
+    max-width: 500px;
+}
+
+/* Container de Números (Stats) */
+.stats-container {
+    display: flex;
+    gap: 30px;
+}
+
+.stat-item {
+    text-align: center;
+    max-width: 130px;
+}
+
+.stat-icon {
+    background-color: var(--accent-yellow);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover .stat-icon {
+    transform: scale(1.1);
+}
+
+.stat-icon img {
+    width: 30px;
+    height: auto;
+}
+
+.stat-info strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.stat-info span {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--grey-text);
+    line-height: 1.2;
+    display: block;
+}
+
+/* Cards de Diferenciais (Lado Direito) */
+.info-card {
+    background-color: var(--white-text);
+    border-radius: 15px;
+    display: flex;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateX(-10px);
+}
+
+.card-icon {
+    background-color: #d1d2d4; /* Cinza claro para a área do ícone */
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+}
+
+.card-icon img {
+    width: 50px;
+}
+
+.card-text {
+    padding: 20px 25px;
+    color: var(--primary-bg);
+}
+
+.card-text h3 {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.card-text p {
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   SEÇÃO TORNEIOS (CARROSSEL)
+   ========================================================================== */
+.tournaments {
+    padding: 60px 0;
+    background-color: var(--primary-bg);
+}
+
+.carousel-container {
+    background-color: var(--white-text);
+    border-radius: 40px; /* Bordas bem arredondadas conforme o layout */
+    padding: 50px;
+    color: var(--primary-bg);
+}
+
+.carousel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.carousel-title {
+    font-size: 38px;
+    font-weight: 900;
+    max-width: 400px;
+    line-height: 1;
+}
+
+.carousel-subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    max-width: 350px;
+    text-align: right;
+}
+
+/* Trilho e Cards */
+.carousel-track-container {
+    overflow: hidden; /* Esconde o que sobra */
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.carousel-track {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.tournament-card {
+    min-width: calc(25% - 15px); /* 4 cards no desktop */
+    height: 400px;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+}
+
+.tournament-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.tournament-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay Escuro com Texto */
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    background: linear-gradient(transparent, rgba(0, 38, 58, 0.9));
+    color: #fff;
+}
+
+.card-overlay h3 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.card-overlay span {
+    font-size: 12px;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.card-overlay p {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.card-overlay p i {
+    margin-right: 5px;
+}
+
+/* Rodapé do Carrossel */
+.carousel-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-more {
+    padding: 12px 35px;
+    border: 2px solid var(--primary-bg);
+    border-radius: 10px;
+    color: var(--primary-bg);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.btn-more:hover {
+    background-color: var(--primary-bg);
+    color: var(--white-text);
+}
+
+.carousel-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-bg);
+    background: transparent;
+    color: var(--primary-bg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.nav-btn:hover {
+    background-color: var(--primary-bg);
+    color: var(--white-text);
+}
+
+/* Tamanho da setinha dentro da bolinha */
+.nav-btn i {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Efeito ao passar o mouse: a bolinha preenche e a seta fica branca */
+.nav-btn:hover {
+    background-color: var(--primary-bg);
+    color: var(--white-text);
+    transform: scale(1.1); /* Dá um leve destaque */
+}
+
+/* Efeito visual ao clicar */
+.nav-btn:active {
+    transform: scale(0.95);
+}
+
+/* ==========================================================================
+   SEÇÃO PACOTES (TRÊS QUADRADOS)
+   ========================================================================== */
+.packages {
+    padding: 60px 0;
+    background-color: var(--primary-bg);
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr; /* O primeiro é levemente maior */
+    gap: 20px;
+    align-items: stretch;
+}
+
+.package-card {
+    border-radius: 40px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Estilo do Card Branco */
+.info-card-white {
+    background-color: var(--white-text);
+    padding: 50px;
+    justify-content: center;
+}
+
+.package-title {
+    color: var(--primary-bg);
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.package-text {
+    color: var(--primary-bg);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    max-width: 280px;
+}
+
+.btn-package-outline {
+    display: inline-block;
+    width: fit-content;
+    padding: 12px 30px;
+    border: 2px solid var(--primary-bg);
+    border-radius: 12px;
+    color: var(--primary-bg);
+    text-decoration: none;
+    font-weight: 800;
+    transition: all 0.3s;
+}
+
+.btn-package-outline:hover {
+    background-color: var(--primary-bg);
+    color: var(--white-text);
+}
+
+/* Estilo dos Cards de Esporte */
+.sport-card {
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+    justify-content: space-between;
+}
+
+.sport-icon-top {
+    width: 60px;
+    height: 60px;
+}
+
+.sport-icon-top img {
+    width: 100%;
+    filter: brightness(0) invert(1); /* Deixa o ícone branco se for preto */
+}
+
+.sport-tag {
+    background-color: var(--accent-yellow);
+    color: #fff;
+    font-weight: 900;
+    padding: 8px 20px;
+    position: absolute;
+    top: 100px; /* Ajuste conforme necessário */
+    left: 0;
+    font-size: 18px;
+}
+
+.sport-content {
+    background: linear-gradient(transparent, rgba(0, 38, 58, 0.9));
+    margin: -30px; /* Compensa o padding do card pai */
+    padding: 40px 30px 30px;
+}
+
+.sport-content p {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #fff;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 1100px) {
+    .tournament-card {
+        min-width: calc(50% - 10px); /* 2 cards em tablets */
+    }
+}
+
+@media (max-width: 1024px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--primary-bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 20px 0;
+    }
+
+    .nav-menu li a {
+        font-size: 22px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Transformação para o ícone de "X" */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+        background-color: var(--accent-yellow);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        background-color: var(--accent-yellow);
+    }
+
+    .about-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-desc {
+        margin: 0 auto 40px;
+    }
+
+    .stats-container {
+        justify-content: center;
+    }
+
+    .about-content {
+        margin-bottom: 50px;
+    }
+
+    .nav-menu {
+        /* ... seu código atual do nav-menu ... */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px; /* Espaçamento entre os links e os ícones */
+    }
+
+    /* Mostrar os ícones quando o menu abrir */
+    .social-icons-mobile {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px; /* Dá um espaço entre o último link e as redes sociais */
+    }
+
+    /* Garante que os botões sociais no menu mobile sigam o mesmo estilo */
+    .social-icons-mobile .social-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        background: linear-gradient(180deg, var(--accent-yellow) 0%, var(--btn-grad-start) 100%);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-bg);
+        text-decoration: none;
+    }
+
+    /* Esconde os ícones que estão "soltos" na barra lá em cima para não poluir */
+    .navbar > .social-icons {
+        display: none;
+    }
+
+    .package-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-card-white {
+        text-align: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-logo {
+        max-width: 80%;
+    }
+
+    .hero-text {
+        font-size: 18px;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .social-icons {
+        display: none; /* Esconde ícones no header no mobile para não poluir */
+    }
+
+    .carousel-header {
+        flex-direction: column;
+        text-align: left;
+    }
+    
+    .carousel-subtitle {
+        text-align: left;
+        margin-top: 15px;
+    }
+
+    .tournament-card {
+        min-width: 85%; /* No mobile, mostra quase 1 card inteiro */
+    }
+
+    .carousel-container {
+        padding: 30px 20px;
+        border-radius: 25px;
+    }
+
+    .carousel-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .section-title {
+        font-size: 24px;
+    }
+
+    .stats-container {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .stat-item {
+        flex: 1 1 40%; /* Dois por linha no mobile pequeno */
+    }
+
+    .info-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-icon {
+        padding: 15px;
+    }
+
+    .btn-more {
+        padding: 12px 17px;
+    }
+}
+
+/* ==========================================================================
+   ANIMAÇÕES DE ENTRADA
+   ========================================================================== */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

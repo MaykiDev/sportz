@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportz - Torneios de Base</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo-sportz.png" alt="Sportz Logo" class="logo-img">
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#torneios">TORNEIOS</a></li>
+                <li><a href="#galeria">GALERIA</a></li>
+                <li><a href="#treinadores">TREINADORES</a></li>
+                <li><a href="#quem-somos">QUEM SOMOS</a></li>
+
+                <div class="social-icons-mobile">
+                    <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+                </div>
+            </ul>
+
+            <div class="social-icons">
+                <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="logo-large.png" alt="Sportz" class="hero-logo">
+                
+                <p class="hero-text">
+                    A SPORTZ É A ÚNICA QUE LEVA VOCÊ E SUA EQUIPE PARA OS MAIORES TORNEIOS DE BASE DO MUNDO!
+                </p>
+
+                <div class="hero-btns">
+                    <a href="#" class="btn btn-primary">ENTRE EM CONTATO</a>
+                    <a href="#" class="btn btn-outline">TORNEIOS</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="about">
+        <div class="container about-grid">
+            
+            <div class="about-content">
+                <h2 class="section-title">
+                    A SPORTZ É UMA EMPRESA DE VIAGENS ESPORTIVAS QUE PROPORCIONA MOMENTOS INESQUECÍVEIS PARA SEUS ATLETAS.
+                </h2>
+                <p class="section-desc">
+                    Esporte é sinônimo de vida, saúde e crescimento pessoal. Viajar para praticar esporte é uma vivência sem igual que você carregará para o resto da vida.
+                </p>
+
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <img src="icon-clientes.png" alt="Clientes">
+                        </div>
+                        <div class="stat-info">
+                            <strong>12 MIL</strong>
+                            <span>CLIENTES SATISFEITOS</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <img src="icon-calendario.png" alt="Desde 1983">
+                        </div>
+                        <div class="stat-info">
+                            <strong>DESDE 1983</strong>
+                            <span>PROPORCIONANDO VIAGENS INESQUECÍVEIS</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <img src="icon-viagens.png" alt="Viagens">
+                        </div>
+                        <div class="stat-info">
+                            <strong>2.000+</strong>
+                            <span>VIAGENS REALIZADAS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-cards">
+                
+                <div class="info-card">
+                    <div class="card-icon">
+                        <img src="card-icon-1.png" alt="Viver o Esporte">
+                    </div>
+                    <div class="card-text">
+                        <h3>VIVER O ESPORTE</h3>
+                        <p>Esporte é vida, e com a Sportz você sente na pele como é ser um atleta de verdade e vivencia as experiências, aprendizados e emoções que só o esporte é capaz de proporcionar.</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon">
+                        <img src="card-icon-2.png" alt="Cultura">
+                    </div>
+                    <div class="card-text">
+                        <h3>CONHECER NOVAS CULTURAS</h3>
+                        <p>Viajando com a Sportz você tem a oportunidade única de conhecer de verdade o local visitado, tendo contato com sua cultura, história e belezas.</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon">
+                        <img src="card-icon-3.png" alt="Time">
+                    </div>
+                    <div class="card-text">
+                        <h3>SER PARTE DE UM TIME</h3>
+                        <p>Praticando esportes você aprende a convivência e o trabalho em grupo, o respeito pelos companheiros e constrói amizades para a vida toda.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="tournaments">
+        <div class="container">
+            <div class="carousel-container">
+                
+                <div class="carousel-header">
+                    <h2 class="carousel-title">TOP TORNEIOS SPORTZ</h2>
+                    <p class="carousel-subtitle">Conheça os principais torneios que a SPORTZ pode levar você e sua equipe.</p>
+                </div>
+
+                <div class="carousel-track-container">
+                    <ul class="carousel-track" id="carouselTrack">
+                        <li class="tournament-card">
+                            <img src="torneio-1.jpg" alt="Gothia Cup">
+                            <div class="card-overlay">
+                                <h3>GOTHIA CUP</h3>
+                                <span>FUTEBOL</span>
+                                <p><i class="fas fa-map-marker-alt"></i> GOTEMBURGO - SUÉCIA</p>
+                            </div>
+                        </li>
+                        <li class="tournament-card">
+                            <img src="torneio-2.jpg" alt="Helsinki Cup">
+                            <div class="card-overlay">
+                                <h3>HELSINKI CUP</h3>
+                                <span>FUTEBOL</span>
+                                <p><i class="fas fa-map-marker-alt"></i> HELSINKI - FINLÂNDIA</p>
+                            </div>
+                        </li>
+                        <li class="tournament-card">
+                            <img src="torneio-3.jpg" alt="Partille World Cup">
+                            <div class="card-overlay">
+                                <h3>PARTILLE WORLD CUP</h3>
+                                <span>HANDEBOL</span>
+                                <p><i class="fas fa-map-marker-alt"></i> GOTEMBURGO - SUÉCIA</p>
+                            </div>
+                        </li>
+                        <li class="tournament-card">
+                            <img src="torneio-4.jpg" alt="Granollers Cup">
+                            <div class="card-overlay">
+                                <h3>GRANOLLERS CUP</h3>
+                                <span>HANDEBOL</span>
+                                <p><i class="fas fa-map-marker-alt"></i> GRANOLLERS - ESPANHA</p>
+                            </div>
+                        </li>
+                          <li class="tournament-card">
+                            <img src="torneio-4.jpg" alt="Granollers Cup">
+                            <div class="card-overlay">
+                                <h3>GRANOLLERS CUP</h3>
+                                <span>HANDEBOL</span>
+                                <p><i class="fas fa-map-marker-alt"></i> GRANOLLERS - ESPANHA</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="carousel-footer">
+                    <a href="#" class="btn-more">QUERO SABER MAIS</a>
+                    <div class="carousel-nav">
+                        <button class="nav-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="nav-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="packages">
+        <div class="container package-grid">
+            
+            <div class="package-card info-card-white">
+                <h2 class="package-title">CONHEÇA NOSSOS PACOTES</h2>
+                <p class="package-text">CONHEÇA NOSSOS PACOTES OU SOLICITE UMA OFERTA PERSONALIZADA.</p>
+                <a href="#" class="btn-package-outline">SOLICITAR OFERTA</a>
+            </div>
+
+            <div class="package-card sport-card" style="background-image: url('sua-imagem-handebol.jpg');">
+                <div class="sport-icon-top">
+                    <img src="icone-handebol.png" alt="Handebol">
+                </div>
+                <div class="sport-tag">HANDEBOL</div>
+                <div class="sport-content">
+                    <p>CONHEÇA VARIOS PAÍSES DA EUROPA E AINDA DISPUTE TORNEIOS. ESPORTE E TURISMO UNIDOS.</p>
+                </div>
+            </div>
+
+            <div class="package-card sport-card" style="background-image: url('sua-imagem-futebol.jpg');">
+                <div class="sport-icon-top">
+                    <img src="icone-futebol.png" alt="Futebol">
+                </div>
+                <div class="sport-tag">FUTEBOL</div>
+                <div class="sport-content">
+                    <p>CONHEÇA VARIOS PAÍSES DA EUROPA E AINDA DISPUTE OS MAIORES TORNEIOS DE BASE DO MUNDO.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
