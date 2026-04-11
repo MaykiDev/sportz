@@ -706,6 +706,64 @@ header {
 }
 
 /* ==========================================================================
+   SEÇÃO PARCEIROS
+   ========================================================================== */
+.partners {
+    padding: 60px 0;
+    background-color: var(--primary-bg); /* Mantém o fundo azul escuro da página */
+}
+
+.partners-container {
+    background-color: var(--white-text); /* Fundo branco do contêiner */
+    border-radius: 40px;
+    padding: 50px;
+    text-align: left;
+}
+
+.partners-title {
+    color: var(--primary-bg);
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.partners-grid {
+    display: grid;
+    /* 6 colunas iguais para o desktop */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 40px 20px;
+    align-items: center;
+    justify-items: center;
+}
+
+.partner-logo {
+    width: 100%;
+    max-width: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.partner-logo img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* Filtro leve caso queira padronizar a intensidade das cores */
+    filter: grayscale(10%) contrast(110%);
+}
+
+.partner-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Ajuste para a última linha não ficar "esticada" e manter o alinhamento central */
+.partners-grid > :nth-child(n+13) {
+    grid-column: span 1;
+}
+
+/* ==========================================================================
    RESPONSIVIDADE (MEDIA QUERIES)
    ========================================================================== */
 @media (max-width: 1100px) {
@@ -820,6 +878,10 @@ header {
         text-align: center;
         align-items: center;
     }
+
+    .partners-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 por linha em tablets */
+    }
 }
 
 @media (max-width: 992px) {
@@ -915,6 +977,20 @@ header {
 
     .btn-more {
         padding: 12px 17px;
+    }
+
+    .partners-container {
+        padding: 30px 20px;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 por linha no mobile */
+        gap: 30px 15px;
+    }
+    
+    .partners-title {
+        font-size: 24px;
+        margin-bottom: 25px;
     }
 }
 
