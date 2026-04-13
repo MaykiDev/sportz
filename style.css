@@ -33,11 +33,9 @@ body {
    ========================================================================== */
 header {
     width: 100%;
-    padding: 30px 5%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    padding: 20px 5%;
+    position: relative;
+    background-color: var(--primary-bg);
 }
 
 .navbar {
@@ -49,7 +47,7 @@ header {
 }
 
 .logo-img {
-    height: 40px; /* Ajuste conforme o tamanho da sua logo PNG */
+    height: 60px; /* Ajuste conforme o tamanho da sua logo PNG */
     width: auto;
 }
 
@@ -106,14 +104,27 @@ header {
    HERO SECTION (CONTEÚDO PRINCIPAL)
    ========================================================================== */
 .hero {
-    height: 100vh;
+    height: auto; /* Deixa de ser tela cheia */
+    min-height: 600px; /* Altura mínima para o conteúdo */
     width: 100%;
-    /* Substitua 'seu-fundo.jpg' pelo nome do seu arquivo de imagem */
-    background: linear-gradient(to right, rgba(0, 38, 58, 0.8) 20%, rgba(0, 38, 58, 0.2) 100%), url('seu-fundo.jpg');
-    background-size: cover;
-    background-position: center;
     display: flex;
     align-items: center;
+    padding: 10px 0; /* Espaço entre o menu e o bloco da imagem */
+}
+
+.hero .container {
+    width: 95%;
+    max-width: 1400px;
+    height: 600px; /* Altura fixa do bloco da imagem */
+    margin: 0 auto;
+    background: linear-gradient(to right, rgba(0, 38, 58, 0.8) 20%, rgba(0, 38, 58, 0.2) 100%), url('assent/ginagio.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 40px; /* Bordas arredondadas conforme o layout */
+    display: flex;
+    align-items: center;
+    padding: 0 5%; /* Padding interno para o texto não encostar na borda */
+    overflow: hidden;
 }
 
 .container {
@@ -125,6 +136,7 @@ header {
 .hero-content {
     max-width: 650px;
     animation: fadeInLeft 1s ease-out;
+    text-align: left;
 }
 
 .hero-logo {
