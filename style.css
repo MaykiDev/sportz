@@ -806,21 +806,19 @@ header {
 }
 
 .benefits-white-box {
-    background-color: var(--white-text);
-    border-radius: 40px;
-    padding: 60px;
-    display: flex;
-    flex-direction: column;
-    gap: 60px; /* Espaço entre as duas linhas */
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 40px;
 }
 
 .benefit-row {
     display: flex;
     align-items: center;
     gap: 40px;
+    margin-bottom: 40px;
 }
 
-/* Inverte a ordem apenas na linha dos Treinadores */
+/* Inverte a ordem da segunda linha no desktop */
 .benefit-row.reverse {
     flex-direction: row-reverse;
 }
@@ -830,26 +828,23 @@ header {
 }
 
 .benefit-tag {
-    color: #fbaf19; /* Amarelo solicitado */
+    background-color: var(--accent-yellow);
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 20px;
     font-weight: 900;
-    font-size: 32px;
-    display: block;
-    margin-bottom: 10px;
+    font-size: 12px;
 }
 
 .benefit-subtitle {
-    color: #00283c; /* Azul solicitado */
-    font-size: 28px;
-    font-weight: 900;
-    line-height: 1.2;
-    margin-bottom: 20px;
+    color: #00263a;
+    font-size: 24px;
+    margin: 15px 0;
+    font-weight: 700;
 }
 
 .benefit-description {
-    color: #00283c; /* Azul solicitado */
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.4;
+    color: #333;
 }
 
 .benefit-image {
@@ -859,11 +854,9 @@ header {
 .img-placeholder {
     width: 100%;
     height: 300px;
-    background-color: #ddd; /* Cor de fundo caso a imagem falhe */
     background-size: cover;
     background-position: center;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 /* ==========================================================================
@@ -1248,6 +1241,25 @@ header {
 
     .carousel-title {
         font-size: 28px;
+    }
+
+    .benefit-row, 
+    .benefit-row.reverse {
+        flex-direction: column; /* Empilha texto e imagem */
+        gap: 20px;
+        text-align: center;
+    }
+
+    .benefits-white-box {
+        padding: 20px; /* Reduz o respiro lateral no celular */
+    }
+
+    .benefit-image {
+        width: 100%;
+    }
+
+    .img-placeholder {
+        height: 200px; /* Diminui a altura da imagem no celular */
     }
 }
 
